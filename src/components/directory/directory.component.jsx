@@ -9,7 +9,7 @@ const Directory = () => {
       title: "hats",
       imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
       id: 1,
-      linkUrl: "shop/hats",
+      linkUrl: "hats",
     },
     {
       title: "jackets",
@@ -39,12 +39,12 @@ const Directory = () => {
     },
   ];
 
-  const [sections, setSections] = useState(sectionsArray);
+  const [sections] = useState(sectionsArray);
 
   return (
     <div className="directory-menu">
-      {sections.map(({ title, imageUrl, id, size }) => (
-        <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+      {sections.map(({ id, ...otherSectionProps }) => (
+        <MenuItem key={id} {...otherSectionProps} />
       ))}
     </div>
   );
