@@ -31,8 +31,6 @@ const App = () => {
     };
   }, []);
 
-  if (currentUser) console.log(currentUser);
-
   return (
     <div>
       <Header currentUser={currentUser} />
